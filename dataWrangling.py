@@ -68,7 +68,7 @@ pd.read_sql_query(query1, conn).to_csv('new_orders_by_region.csv', index=False)
 pd.read_sql_query(query2, conn).to_csv('total_sales_by_category.csv', index=False)
 df_date = pd.read_sql_query(query3, conn)
 df_date['order_date'] = pd.to_datetime(df_date['order_date'], format='%Y-%m-%d')
-df_date.to_csv('total_sales_on_each_date.csv', index=False)
+df_date.to_csv('new_total_sales_on_each_date.csv', index=False)
 pd.read_sql_query(query4, conn).to_csv('popular_products.csv', index=False)
 pd.read_sql_query(query5, conn).to_csv('total_sales_by_category_and_subcategory.csv', index=False)
 
