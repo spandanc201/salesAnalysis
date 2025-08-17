@@ -65,7 +65,7 @@ ORDER BY CATEGORY, total_sales DESC;
 
 query6 = """
 
-SELECT [Order Date], [Ship Mode], Segment, Region, Category FROM sales_data
+SELECT [Order Date], [Ship Mode], Segment, Region, Category, Sales FROM sales_data
 
 """
 
