@@ -40,6 +40,16 @@ GROUP BY ORDER DATE
 
 '''
 
+prompt4 = '''
+
+SELECT "Product Name", SUM(Sales) AS total_sales
+FROM sales_data
+GROUP BY "Product Name"
+ORDER BY total_sales DESC 
+LIMIT 10;
+
+'''
+
 cursor.execute(prompt1)
 rows1 = cursor.fetchall()
 
@@ -57,6 +67,12 @@ rows3 = cursor.fetchall()
 
 newData3 = pd.DataFrame(rows3, columns = ['Category', 'Sales by Date'])
 newData3.to_csv('total_sales_on_each_date.csv', index = False)
+
+cursor.execute(prompt4)
+rows4 = cursor.fetchall()
+
+newData4 = pd.DataFrame(rows4, columns = ['Category', 'Sales by Date'])
+newData4.to_csv('total_sales_on_each_date.csv', index = False)
 
 #Close connection   
 conn.close()
