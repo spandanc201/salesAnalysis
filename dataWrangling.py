@@ -56,9 +56,9 @@ LIMIT 10;
 # Total sales by category and subcategory in descending order
 query5 = """
 
-SELECT CATEGORY, SUBCATEGORY, SUM(SALES) AS total_sales
+SELECT CATEGORY, [SUB-CATEGORY], SUM(SALES) AS total_sales
 FROM sales_data
-GROUP BY CATEGORY, SUBCATEGORY
+GROUP BY CATEGORY, [SUB-CATEGORY]
 ORDER BY CATEGORY, total_sales DESC;
 
 """
