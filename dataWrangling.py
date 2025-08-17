@@ -10,40 +10,56 @@ conn = sqlite3.connect('demo.db')
 # Load data into SQLite (replace if table exists)
 df.to_sql("sales_data", conn, if_exists='replace', index=False)
 
-# -------- Queries --------
 
-# 1️⃣ Total orders by region
+# Total orders by region
 query1 = """
+
 SELECT REGION, COUNT(*) AS total_orders
 FROM sales_data
 GROUP BY REGION
 ORDER BY total_orders DESC;
+
 """
 
-# 2️⃣ Total sales by category
+# Total sales by category
 query2 = """
-SELECT CATEGORY, SUM(SALES) AS total_sales
+
+SELECT REGION, CATEGORY, SUM(SALES) AS total_sales
 FROM sales_data
-GROUP BY CATEGORY
-ORDER BY total_sales DESC;
+GROUP BY REGION, CATEGORY
+ORDER BY REGION, total_sales DESC;
+
 """
 
-# 3️⃣ Total sales per day for EAST region
+# Total sales per day for EAST region
 query3 = """
+
 SELECT [ORDER DATE] AS order_date, SUM(SALES) AS total_sales_on_day
 FROM sales_data
 WHERE REGION = 'EAST'
 GROUP BY [ORDER DATE]
 ORDER BY [ORDER DATE];
+
 """
 
-# 4️⃣ Top 10 products by sales
+# Top 10 products by sales
 query4 = """
+
 SELECT [Product Name] AS product_name, SUM(SALES) AS total_sales
 FROM sales_data
 GROUP BY [Product Name]
 ORDER BY total_sales DESC
 LIMIT 10;
+
+"""
+
+query5 = """
+
+SELECT CATEGORY, SUBCATEGORY, SUM(SALES) AS total_sales
+FROM sales_data
+GROUP BY CATEGORY, SUBCATEGORY
+ORDER BY CATEGORY, total_sales DESC;
+
 """
 
 # -------- Execute queries and save CSVs --------
