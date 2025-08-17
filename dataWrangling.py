@@ -63,6 +63,12 @@ ORDER BY CATEGORY, total_sales DESC;
 
 """
 
+query6 = """
+
+SELECT [Order Date], [Ship Mode], Segment, Region, Category FROM sales_data
+
+"""
+
 # -------- Execute queries and save CSVs --------
 pd.read_sql_query(query1, conn).to_csv('new_orders_by_region.csv', index=False)
 pd.read_sql_query(query2, conn).to_csv('total_sales_by_category.csv', index=False)
@@ -71,6 +77,7 @@ df['order_date'] = pd.to_datetime(df['order_date'], format='%Y-%m-%d', errors='c
 df.to_csv('actual_total_sales_on_each_date.csv', index=False)
 pd.read_sql_query(query4, conn).to_csv('popular_products.csv', index=False)
 pd.read_sql_query(query5, conn).to_csv('total_sales_by_category_and_subcategory.csv', index=False)
+pd.read_sql_query(query6, conn).to_csv('trainingData.csv', index=False)
 
 # Close connection
 conn.close()
