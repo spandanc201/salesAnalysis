@@ -27,7 +27,7 @@ The final results are:
 ## Setup Instructions
 
 1. Clone repository
-2. Ensure to have SQLite installedfor executing SQL queries
+2. Ensure to have SQLite installed for executing SQL queries
 
 
 ## Usage
