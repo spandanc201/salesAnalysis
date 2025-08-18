@@ -46,8 +46,9 @@ The final results are:
 
 Install dependencies using: 
 
-'''python
+```bash
 pip install pandas numpy scikit-learn xgboost
+```
 
 ## Tableau Dashboard
 
