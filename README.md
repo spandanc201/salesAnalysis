@@ -44,3 +44,7 @@ The final results are:
 - XGBoost
 - SQLite3 
 Install dependencies using: pip install pandas numpy scikit-learn xgboost
+
+## Tableau Dashboard
+
+View the interative Tableau dashboard here: https://public.tableau.com/views/Book1_17554446735170/Dashboard3?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
