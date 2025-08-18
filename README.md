@@ -2,7 +2,7 @@
 A comprehensive analysis of sales data provided by a multi-product company, utilizing SQL, Python, and Tableau to provide both descriptive analytics and visualizations.
 
 ## Overview
-THe project takes sales data and performs various functions:
+The project takes sales data and performs various functions:
 1. Performs data wranglign to eb able to extract various pieces of specific data
 2. Create descriptive analytics for the data tha taer visualzied through the use of Tableau
 3. Use the sales provided in the table to predict future sales
@@ -43,7 +43,11 @@ The final results are:
 - Scikit-learn
 - XGBoost
 - SQLite3 
-Install dependencies using: pip install pandas numpy scikit-learn xgboost
+
+Install dependencies using: 
+
+'''python
+pip install pandas numpy scikit-learn xgboost
 
 ## Tableau Dashboard
 
